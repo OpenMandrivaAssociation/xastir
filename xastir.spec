@@ -2,7 +2,7 @@ Name:		xastir
 Version: 	1.9.8
 Release:	%mkrel 1
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
-Group:		Productivity/Hamradio/Other
+Group:		Communications
 License:	GPL
 URL: 		http://www.xastir.org
 Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
