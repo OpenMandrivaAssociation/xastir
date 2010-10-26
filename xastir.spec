@@ -8,9 +8,9 @@ URL: 		http://www.xastir.org
 Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0	:	xastir-desktop.diff
-BuildRequires:	libopenmotif-devel
-BuildRequires:	libshapelib-devel
-BuildRequires:	libproj-devel
+BuildRequires:	%{mklibname openmotif}-devel
+BuildRequires:	%{mklibname shapelib}-devel
+BuildRequires:	%{mklibname proj}-devel
 
 
 
