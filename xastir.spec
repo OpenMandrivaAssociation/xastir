@@ -55,7 +55,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %doc README.MAPS README.win32 UPGRADE
 
 
-%{_bindir}/
+%{_bindir}/*
 %{_datadir}/xastir/help
 %{_datadir}/xastir/config
 %{_datadir}/xastir/symbols
