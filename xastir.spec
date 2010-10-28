@@ -7,12 +7,10 @@ License:	GPL
 URL: 		http://www.xastir.org
 Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
-Patch0	:	xastir-desktop.diff
-BuildRequires:	%{mklibname openmotif}-devel
-BuildRequires:	libshapelib-devel
-BuildRequires:	libproj-devel
-
-
+Patch0:		xastir-desktop.diff
+BuildRequires:	openmotif-devel
+BuildRequires:	shapelib-devel
+BuildRequires:	proj-devel
 
 %description
 Xastir is a graphical application that interfaces HAM radio
