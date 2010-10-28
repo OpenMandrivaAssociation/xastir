@@ -59,10 +59,10 @@ rm -rf ${RPM_BUILD_ROOT}
 %{_datadir}/xastir/help
 %{_datadir}/xastir/config
 %{_datadir}/xastir/symbols
-%{_mandir}/man1/xastir.1.lzma
-%{_mandir}/man1/callpass.1.lzma
-%{_mandir}/man1/testdbfawk.1.lzma
-%{_mandir}/man1/xastir_udp_client.1.lzma
+%{_mandir}/man1/xastir.1.*
+%{_mandir}/man1/callpass.1.*
+%{_mandir}/man1/testdbfawk.1.*
+%{_mandir}/man1/xastir_udp_client.1.*
 %{_libdir}/xastir
 %{_datadir}/applications/xastir.desktop
 
