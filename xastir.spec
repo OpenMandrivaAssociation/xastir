@@ -1,6 +1,6 @@
 Name:		xastir
 Version: 	1.9.8
-Release:	%mkrel 2
+Release:	%mkrel 3
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
@@ -11,6 +11,10 @@ Patch0:		xastir-desktop.diff
 BuildRequires:	openmotif-devel
 BuildRequires:	shapelib-devel
 BuildRequires:	proj-devel
+BuildRequires:	geotiff-devel
+BuildRequires:	festival-devel
+BuildRequires:	db4.8-devel
+BuildRequires:	graphicsmagick-devel
 
 %description
 Xastir is a graphical application that interfaces HAM radio
@@ -27,13 +31,13 @@ software.
 %build
 ./bootstrap.sh
 
-CFLAGS=-I/usr/include/libgeotiff %configure --with-bdb-libdir=/usr/lib --with-bdb-incdir=/usr/include/db43
-
+CFLAGS=-I/usr/include/libgeotiff 
+%configure 
 %make
 
 %install
 rm -rf ${RPM_BUILD_ROOT}
-%makeinstall
+%makeinstall_std
 
 # Docs go into package docs area instead of here:
 rm -rf ${RPM_BUILD_ROOT}/usr/share/doc/xastir
