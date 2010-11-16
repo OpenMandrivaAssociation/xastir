@@ -1,6 +1,6 @@
 Name:		xastir
 Version: 	1.9.8
-Release:	%mkrel 3
+Release:	%mkrel 4
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
@@ -15,6 +15,7 @@ BuildRequires:	geotiff-devel
 BuildRequires:	festival-devel
 BuildRequires:	db4.8-devel
 BuildRequires:	graphicsmagick-devel
+Requires:	x11-font-adobe-75dpi
 
 %description
 Xastir is a graphical application that interfaces HAM radio
