@@ -1,6 +1,6 @@
 Name:		xastir
-Version: 	1.9.8
-Release:	%mkrel 4
+Version: 	2.0.0
+Release:	1
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
@@ -8,14 +8,15 @@ URL: 		http://www.xastir.org
 Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0:		xastir-desktop.diff
-BuildRequires:	openmotif-devel
+BuildRequires:	lesstif-devel
 BuildRequires:	shapelib-devel
 BuildRequires:	proj-devel
 BuildRequires:	geotiff-devel
 BuildRequires:	festival-devel
-BuildRequires:	db4.8-devel
+BuildRequires:	db5.3-devel
 BuildRequires:	graphicsmagick-devel
 Requires:	x11-font-adobe-75dpi
+Patch1:		xastir-2-mapdir.patch
 
 %description
 Xastir is a graphical application that interfaces HAM radio
@@ -26,32 +27,29 @@ software.
 
 %prep
 %setup -q
-%setup -a1
-%patch0 -p 1
+%setup -a1 -q
+
+%patch0 -p1
+%patch1 -p1
+
 
 %build
 ./bootstrap.sh
 
 CFLAGS=-I/usr/include/libgeotiff 
-%configure 
+%configure2_5x 
 %make
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
 %makeinstall_std
 
 # Docs go into package docs area instead of here:
-rm -rf ${RPM_BUILD_ROOT}/usr/share/doc/xastir
-mkdir -p ${RPM_BUILD_ROOT}/usr/share/applications
-cp xastir.desktop ${RPM_BUILD_ROOT}/usr/share/applications/.
-cp sounds/* ${RPM_BUILD_ROOT}/usr/share/xastir/sounds/.
-
-%clean
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}/usr/share/doc/xastir
+mkdir -p %{buildroot}/usr/share/applications
+cp xastir.desktop %{buildroot}/usr/share/applications/.
+cp sounds/* %{buildroot}/usr/share/xastir/sounds/.
 
 %files
-%defattr(-,root,root)
-
 # Documents:  Go into special doc area
 %doc AUTHORS ChangeLog COPYING COPYING.LIB.LESSTIF DEBUG_LEVELS FAQ INSTALL LICENSE
 %doc README README.Contributing README.CVS README.Getting-Started
@@ -72,10 +70,7 @@ rm -rf ${RPM_BUILD_ROOT}
 # protect user-installed map and other files from being clobbered
 
 %config %{_datadir}/xastir/maps
-# %dir %attr(666,root,root) %{_datadir}/xastir/maps/GPS
 %config %{_datadir}/xastir/Counties
 %config %{_datadir}/xastir/fcc
 %config %{_datadir}/xastir/GNIS
 %config %{_datadir}/xastir/sounds
-
-
