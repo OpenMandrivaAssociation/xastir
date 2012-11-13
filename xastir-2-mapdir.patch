@@ -1,0 +1,12 @@
+diff -Naur xastir-2.0.0/Makefile.am xastir-2.0.0-mod/Makefile.am
+--- xastir-2.0.0/Makefile.am	2010-09-08 21:13:26.000000000 +0300
++++ xastir-2.0.0-mod/Makefile.am	2010-10-31 20:04:05.000000000 +0200
+@@ -75,7 +75,7 @@
+ 	-rm -rf ${pkgdatadir}/doc
+ 
+ install-data-hook:
+-	cd $(mapdir) && \
++	cd $(DESTDIR)$(mapdir) && \
+ 	rm -f CC_OpenStreetMap.png && \
+ 	$(LN_S) CC_OpenStreetMap_logo.png CC_OpenStreetMap.png
+  

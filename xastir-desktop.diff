@@ -1,0 +1,16 @@
+diff -Nur xastir-1.8.2.orig/xastir.desktop xastir-1.8.2/xastir.desktop
+--- xastir-1.8.2.orig/xastir.desktop	1970-01-01 01:00:00.000000000 +0100
++++ xastir-1.8.2/xastir.desktop	2006-06-20 18:48:17.000000000 +0200
+@@ -0,0 +1,12 @@
++[Desktop Entry]
++Categories=HamRadio;HamRadio;
++Encoding=UTF-8
++Name=Xastir
++Exec=xastir
++Icon=
++Type=Application
++Comment=Graphical APRS program for X
++#SUSE-Overwrite Comment[de]=APRS Programm for X
++
++X-SuSE-translate=true
++
