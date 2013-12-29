@@ -1,6 +1,6 @@
 Name:		xastir
 Version: 	2.0.0
-Release:	1
+Release:	2
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
