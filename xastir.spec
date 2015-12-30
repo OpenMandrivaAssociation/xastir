@@ -1,6 +1,9 @@
+%define _disable_rebuild_configure 1
+%define _disable_lto 1
+
 Name:		xastir
-Version: 	2.0.0
-Release:	3
+Version: 	2.0.6
+Release:	1
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
@@ -8,15 +11,14 @@ URL: 		http://www.xastir.org
 Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0:		xastir-desktop.diff
-BuildRequires:	lesstif-devel
+BuildRequires:	motif-devel
 BuildRequires:	shapelib-devel
 BuildRequires:	proj-devel
 BuildRequires:	geotiff-devel
 BuildRequires:	festival-devel
-BuildRequires:	db5.3-devel
+BuildRequires:	db-devel
 BuildRequires:	graphicsmagick-devel
 Requires:	x11-font-adobe-75dpi
-Patch1:		xastir-2-mapdir.patch
 
 %description
 Xastir is a graphical application that interfaces HAM radio
@@ -28,14 +30,11 @@ software.
 %prep
 %setup -q
 %setup -a1 -q
-
-%patch0 -p1
-%patch1 -p1
+%apply_patches
 
 
 %build
-./bootstrap.sh
-
+export CC=gcc
 CFLAGS=-I/usr/include/libgeotiff 
 %configure2_5x 
 %make
@@ -60,11 +59,11 @@ cp sounds/* %{buildroot}/usr/share/xastir/sounds/.
 %{_datadir}/xastir/help
 %{_datadir}/xastir/config
 %{_datadir}/xastir/symbols
+%{_datadir}/xastir/scripts
 %{_mandir}/man1/xastir.1.*
 %{_mandir}/man1/callpass.1.*
 %{_mandir}/man1/testdbfawk.1.*
 %{_mandir}/man1/xastir_udp_client.1.*
-%{_libdir}/xastir
 %{_datadir}/applications/xastir.desktop
 
 # protect user-installed map and other files from being clobbered
