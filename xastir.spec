@@ -10,7 +10,7 @@ Group:		Communications
 License:	GPL
 URL: 		http://www.xastir.org
 Source0: 	https://github.com/Xastir/Xastir/archive/Release-%{version}/%{oname}-Release-%{version}.tar.gz
-Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
+#Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0:		xastir-desktop.diff
 BuildRequires:	motif-devel
 BuildRequires:	shapelib-devel
@@ -30,7 +30,7 @@ software.
 
 %prep
 %setup -q -n %{oname}-Release-%{version}
-%setup -a1 -q
+#setup -a1 -q
 %apply_patches
 
 
