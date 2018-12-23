@@ -19,7 +19,7 @@ BuildRequires:	geotiff-devel
 BuildRequires:	festival-devel
 BuildRequires:	db-devel
 BuildRequires:	graphicsmagick-devel
-BuildRequires:  motif-devel
+BuildRequires:  motif
 BuildRequires:  pkgconfig(libcurl)
 Requires:	x11-font-adobe-75dpi
 
