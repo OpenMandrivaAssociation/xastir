@@ -20,6 +20,7 @@ BuildRequires:	festival-devel
 BuildRequires:	db-devel
 BuildRequires:	graphicsmagick-devel
 BuildRequires:  motif-devel
+BuildRequires:  pkgconfig(libcurl)
 Requires:	x11-font-adobe-75dpi
 
 %description
