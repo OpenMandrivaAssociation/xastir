@@ -1,14 +1,15 @@
 %define _disable_rebuild_configure 1
 %define _disable_lto 1
+%define oname Xastir
 
 Name:		xastir
-Version: 	2.0.6
+Version: 	2.1.0
 Release:	1
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
 URL: 		http://www.xastir.org
-Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
+Source0: 	https://github.com/Xastir/Xastir/archive/Release-%{version}/%{oname}-Release-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0:		xastir-desktop.diff
 BuildRequires:	motif-devel
