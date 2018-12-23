@@ -29,7 +29,7 @@ Install XASTIR if you are interested in APRS(tm) and HAM radio
 software.
 
 %prep
-%setup -q
+%setup -q n %{oname}-Release-%{version}
 %setup -a1 -q
 %apply_patches
 
