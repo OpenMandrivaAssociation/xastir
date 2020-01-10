@@ -30,7 +30,7 @@ software.
 %prep
 %setup -q
 %setup -a1 -q
-%apply_patches
+%autopatch -p1
 
 
 %build
