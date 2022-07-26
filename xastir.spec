@@ -2,13 +2,14 @@
 %define _disable_lto 1
 
 Name:		xastir
-Version: 	2.0.6
+Version: 	2.1.8
 Release:	1
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
 URL: 		http://www.xastir.org
-Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
+Source0:    https://github.com/Xastir/Xastir/archive/refs/tags/Release-%{version}/Xastir-Release-%{version}.tar.gz
+#Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0:		xastir-desktop.diff
 BuildRequires:	motif-devel
@@ -28,7 +29,7 @@ Install XASTIR if you are interested in APRS(tm) and HAM radio
 software.
 
 %prep
-%setup -q
+%setup -qn Xastir-Release-%{version}
 %setup -a1 -q
 %autopatch -p1
 
