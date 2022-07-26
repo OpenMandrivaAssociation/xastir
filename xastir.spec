@@ -30,18 +30,18 @@ software.
 
 %prep
 %setup -qn Xastir-Release-%{version}
-%setup -qn sounds -a1
+#setup -qn sounds -a1
 %autopatch -p1
 
 
 %build
 export CC=gcc
 CFLAGS=-I/usr/include/libgeotiff 
-%configure2_5x 
-%make
+%configure 
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # Docs go into package docs area instead of here:
 rm -rf %{buildroot}/usr/share/doc/xastir
