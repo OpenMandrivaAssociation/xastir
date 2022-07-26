@@ -37,7 +37,7 @@ software.
 %build
 export CC=gcc
 CFLAGS=-I/usr/include/libgeotiff 
-%configure 
+#configure 
 %make_build
 
 %install
