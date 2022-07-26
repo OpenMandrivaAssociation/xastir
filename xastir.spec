@@ -30,7 +30,7 @@ software.
 
 %prep
 %setup -qn Xastir-Release-%{version}
-%setup -qn xastir-sounds -a1
+%setup -qn sounds -a1
 %autopatch -p1
 
 
