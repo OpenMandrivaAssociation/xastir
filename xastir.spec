@@ -7,7 +7,7 @@ Release:	1
 Summary: 	Amateur Station Tracking and Reporting system for amateur radio
 Group:		Communications
 License:	GPL
-URL: 		http://www.xastir.org
+URL: 		https://www.xastir.org
 Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0:		xastir-desktop.diff
