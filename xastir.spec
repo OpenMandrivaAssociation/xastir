@@ -11,6 +11,11 @@ URL: 		https://www.xastir.org
 Source0: 	http://prdownloads.sourceforge.net/xastir/xastir-%{version}.tar.gz
 Source1:        http://prdownloads.sourceforge.net/xastir/xastir-sounds.tgz
 Patch0:		xastir-desktop.diff
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	motif-devel
 BuildRequires:	shapelib-devel
 BuildRequires:	proj-devel
